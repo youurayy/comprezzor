@@ -5,6 +5,8 @@ var laeh2 = require('laeh2');
 var _x = laeh2._x;
 var _e = laeh2._e;
 
+var comprezzor = require('comprezzor');
+
 function cb(err, res) {
     console.log(err ? err.stack : res);
 }
@@ -16,8 +18,8 @@ var opts = {
     strategy: 'Z_DEFAULT_STRATEGY'
 };
 
-var zip = new exports.Compressor(true, opts);
-var unzip = new exports.Compressor(false, opts);
+var zip = new comprezzor(true, opts);
+var unzip = new comprezzor(false, opts);
 
 console.log('zip: ' + zip.info());
 console.log('unzip: ' + unzip.info());
