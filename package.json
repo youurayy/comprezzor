@@ -3,7 +3,7 @@
     "name": "comprezzor",
     "description": "easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)",
     "keywords": [ "zlib", "deflate", "inflate", "compress", "compression" ],
-    "version": "0.0.2",
+    "version": "0.0.3",
     "homepage": "http://github.com/ypocat/comprezzor",
     "repository": {
         "type": "git",
