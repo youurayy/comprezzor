@@ -1,0 +1,30 @@
+{
+    "author": "Juraj Vitko (@ypocat)",
+    "name": "comprezzor",
+    "description": "easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)",
+    "keywords": [ "zlib", "deflate", "inflate", "compress", "compression" ],
+    "version": "0.0.1",
+    "homepage": "http://github.com/ypocat/comprezzor",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ypocat/comprezzor.git"
+    },
+    "main": "lib/comprezzor.js",
+    "directories": {
+        "lib": "./lib"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "dependencies": {
+        "clone": "*"
+    },
+    "devDependencies": {
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url" : "https://raw.github.com/ypocat/comprezzor/master/license.txt"
+        }
+    ]
+}
