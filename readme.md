@@ -1,6 +1,14 @@
 ## easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)
 
 ```js
+var laeh2 = require('laeh2');
+var _x = laeh2._x;
+var _e = laeh2._e;
+
+function cb(err, res) {
+    console.log(err ? err.stack : res);
+}
+
 var opts = {
     windowBits: 14,
     memLevel: 7,
