@@ -31,19 +31,27 @@ console.log('input length: %d', input.length);
 
 zip.make(input, _x(cb, true, function(err, res) {
 
+    // res is a buffer now
+
     //console.log(res);
     console.log('zipped length: %d', res.length);
 
     unzip.make(res, _x(cb, true, function(err, res) {
 
+        // res is a string now
+
         // console.log(res);
         console.log('unzipped length: %d', res.length);
 
-        zip.make(input, _x(cb, true, function(err, res) {
+        zip.make(res, _x(cb, true, function(err, res) {
+
+            // res is a buffer now
 
             //console.log(res);
 
             unzip.make(res, _x(cb, true, function(err, res) {
+
+                // res is a string now
 
                 cb(null, res === input ? 'match' : 'no match');
             }));
