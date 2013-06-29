@@ -1,6 +1,6 @@
 ## easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)
 
-### new in 0.0.6 - pooling:
+### new in 0.0.6 - [pooling](https://github.com/coopernurse/node-pool#documentation):
 
 ```js
 
