@@ -1,5 +1,31 @@
 ## easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)
 
+### new in 0.0.6: pooling:
+
+```js
+
+var opts = {
+    // ...
+    pool: {
+        max: 100
+        // see for more: https://github.com/coopernurse/node-pool#documentation
+    }
+    // ...
+};
+
+var zip = new comprezzor(true, opts);
+var unzip = new comprezzor(false, opts);
+
+// use from multiple threads
+
+zip.pool.destroyAllNow();
+unzip.pool.destroyAllNow();
+
+```
+
+
+### usage:
+
 ```js
 var laeh2 = require('laeh2');
 var _x = laeh2._x;
