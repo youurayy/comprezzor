@@ -45,13 +45,11 @@ describe('comprezzor', function() {
 
         var ff = [];
 
-        for(var i = 0; i < 100; i++) {
+        for(var i = 0; i < 20; i++) {
             (function(i) {
                 ff.push(_x(null, false, function(cb) {
-                    console.log('thread #%d begin', i);
 
                     testSub(zip, unzip, i, _x(cb, true, function(err) {
-                        console.log('thread #%d end', i);
                         cb();
                     }));
 
@@ -63,10 +61,10 @@ describe('comprezzor', function() {
 
         async.parallel(ff, _x(cb, true, function(err, res) {
 
-            console.log('took %s', utilz.timeSpan(Date.now() - start));
+            // console.log('took %s', utilz.timeSpan(Date.now() - start));
 
-            // zip.pool.destroyAllNow();
-            // unzip.pool.destroyAllNow();
+            zip.pool.destroyAllNow();
+            unzip.pool.destroyAllNow();
             cb();
         }));
     }));
@@ -87,10 +85,11 @@ function testSub(zip, unzip, debug, cb) {
         console.log('input length: %d', input.length);
     }
 
-    if(n) console.log('#%d make 1.', n);
+    // if(n) console.log('#%d make begin 1.', n);
     zip.make(input, _x(cb, true, function(err, res) {
+        // if(n) console.log('#%d make end 1.', n);
 
-        return cb(); // temporary
+        // return cb(); // temporary
 
         //console.log(res);
         if(debug)

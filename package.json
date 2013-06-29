@@ -19,13 +19,13 @@
     "dependencies": {
         "laeh2": "*",
         "clone": "*",
-        "generic-pool": "*",
+        "generic-pool": "*"
+    },
+    "devDependencies": {
+        "mocha": "*",
         "async-mini": "*",
         "underscore": "*",
         "utilz": "*"
-    },
-    "devDependencies": {
-        "mocha": "*"
     },
     "scripts": {
         "test": "mocha -t 10000 -s 2000 -R list",
