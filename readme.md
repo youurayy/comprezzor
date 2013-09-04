@@ -1,5 +1,15 @@
 ## easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)
 
+### new in 0.0.7 - direct usage - a new Zlib engine is created upon each use
+
+```js
+var opts = {
+    // ...
+    direct: true
+    // ...
+};
+```
+
 ### new in 0.0.6 - [pooling](https://github.com/coopernurse/node-pool#documentation):
 
 ```js

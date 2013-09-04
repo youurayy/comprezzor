@@ -15,7 +15,8 @@ describe('comprezzor', function() {
             windowBits: 14,
             memLevel: 7,
             level: 'Z_BEST_COMPRESSION',
-            strategy: 'Z_DEFAULT_STRATEGY'
+            strategy: 'Z_DEFAULT_STRATEGY',
+            direct: true
         };
 
         var zip = new comprezzor(true, opts);
@@ -34,10 +35,11 @@ describe('comprezzor', function() {
             memLevel: 7,
             level: 'Z_BEST_COMPRESSION',
             strategy: 'Z_DEFAULT_STRATEGY',
-            pool: {
-                min: 1,
-                max: 5
-            }
+            // pool: {
+            //     min: 1,
+            //     max: 5
+            // }
+            direct: true
         };
 
         var zip = new comprezzor(true, opts);
@@ -63,8 +65,10 @@ describe('comprezzor', function() {
 
             // console.log('took %s', utilz.timeSpan(Date.now() - start));
 
-            zip.pool.destroyAllNow();
-            unzip.pool.destroyAllNow();
+            if(zip.pool)
+                zip.pool.destroyAllNow();
+            if(unzip.pool)
+                unzip.pool.destroyAllNow();
             cb();
         }));
     }));
