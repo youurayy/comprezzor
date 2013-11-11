@@ -1,5 +1,13 @@
 ## easy and reusable way to compress and decompress text data without headers (e.g. for storage in redis)
 
+### new in 0.0.9 - option to disable compression
+
+```js
+var opts = {
+    disabled: true
+};
+```
+
 ### new in 0.0.7 - direct usage - a new Zlib engine is created upon each use
 
 ```js
